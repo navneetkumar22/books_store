@@ -1,0 +1,79 @@
+.book-card {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+}
+
+.book-card:hover {
+    box-shadow: 0 9px 9px rgba(0, 0, 0, 0.1);
+    background-color: rgb(251, 251, 251);
+    /* border: none; */
+}
+
+.book-image {
+    margin-right: 20px;
+}
+
+.book-details {
+    flex: 1;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+.book-details p {
+    font-size: small;
+    font-weight: 600;
+    margin: 5px 0px;
+}
+
+.author {
+    color: rgb(174, 173, 173);
+    font-weight: bold;
+}
+
+.author,
+.genre,
+.year {
+    margin-bottom: 3px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-button,
+.delete-button {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: small;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.edit-button {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.delete-button {
+    background-color: #ff6b6b;
+    color: #fff;
+}
+
+.genre-year {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}

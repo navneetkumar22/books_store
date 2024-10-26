@@ -1,0 +1,41 @@
+.list {
+    padding: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 30px;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.search {
+    /* border: 1px solid red; */
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search input {
+    width: 40%;
+    padding: 8px;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid gray;
+    font-size: small;
+}
+
+.search input::placeholder {
+    font-size: small;
+    color: gray;
+}
+
+.search div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
