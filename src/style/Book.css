@@ -45,35 +45,35 @@
     margin-bottom: 3px;
 }
 
-.actions {
+.genre-year {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
 }
 
-.edit-button,
-.delete-button {
+.share {
     padding: 6px 16px;
     border: none;
     border-radius: 5px;
     font-size: small;
     font-weight: bold;
     cursor: pointer;
-}
-
-.edit-button {
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-.delete-button {
-    background-color: #ff6b6b;
-    color: #fff;
-}
-
-.genre-year {
+    background-color: #40C351;
+    color: white;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 30px;
+    gap: 4px;
+}
+
+.actions img {
+    height: 20px;
+}
+
+.share:hover {
+    background-color: #1aab4f;
+}
+
+.share:active {
+    transform: scale(0.98);
 }

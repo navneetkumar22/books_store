@@ -1,32 +1,21 @@
 import React from 'react';
 import '../style/Book.css';
 import bookIcon from '../assets/book.png';
-import { useNavigate } from 'react-router-dom';
-import { deleteBook } from '../api/books';
-import { toast } from 'react-toastify';
+import shareIcon from '../assets/whatsapp.png';
+
+const pdfLink = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
 
 const Book = (book) => {
-    const { _id, title, author, genre, publication_year } = book.book;
+    const { id, title, author, genre, publication_year } = book.book;
 
-    const navigate = useNavigate()
-
-    const handleDelete = async (id) => {
-        const isTrue = window.confirm('Do you want to delete this book');
-        console.log(isTrue);
-
-        if (isTrue) {
-            await deleteBook(id);
-            toast.success('Book deleted successfully')
-
-            setTimeout(() => {
-                window.location.reload(false)
-            }, 1000)
-
-        }
+    const handleShare = (bookTitle, bookAuthor) => {
+        const message = `Check out this book: ${bookTitle} - ${bookAuthor} - ${pdfLink}`;
+        const sharePdf = `https://wa.me/?text=${encodeURIComponent(message)}`;
+        window.open(sharePdf, '_blank')
     }
 
     return (
-        <div className='book-card'>
+        <div className='book-card' key={id}>
             <img src={bookIcon} alt="Book Cover" className="book-image" />
             <div className="book-details">
                 <h3 className="title">{title}</h3>
@@ -37,8 +26,7 @@ const Book = (book) => {
                 </div>
             </div>
             <div className="actions">
-                <button className="edit-button" onClick={() => navigate(`/editbook/${_id}`)}>Edit</button>
-                <button className="delete-button" onClick={() => handleDelete(_id)}>Delete</button>
+                <button className="share" onClick={() => handleShare(title, author)}><span><img src={shareIcon} alt='share' /></span>Share</button>
             </div>
         </div>
     )
