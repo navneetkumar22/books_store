@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import "../style/Navbar.css";
+import searchIcon from '../assets/search.png';
+import accountImage from '../assets/account.png';
+import cartImage from '../assets/cartImage.png';
+import wishlistImage from '../assets/wishList.png';
 
 const Navbar = () => {
     const [navSticky, setNavSticky] = useState(false);
@@ -24,8 +28,31 @@ const Navbar = () => {
 
     return (
         <section className={`navbar ${navSticky ? "sticky" : ""}`}>
-            <div>
-                <h2>Book Store</h2>
+            <div className='top'>
+                <div>
+                    <h2>BookStore</h2>
+                </div>
+                <div className='search'>
+                    <img src={searchIcon} alt='search' />
+                    <input placeholder='Search' />
+                </div>
+                <div className='icons'>
+                    <img src={accountImage} alt='account' />
+                    <img src={cartImage} alt='cart' />
+                    <img src={wishlistImage} alt='wishlist' />
+                </div>
+            </div>
+
+            <div className='bottom'>
+                <ul>
+                    <li>Christmas</li>
+                    <li>Books</li>
+                    <li>Fiction</li>
+                    <li>Non-Fiction</li>
+                    <li>Teen & YA</li>
+                    <li>Gift Cards</li>
+                    <li>Sale</li>
+                </ul>
             </div>
         </section>
     )

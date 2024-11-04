@@ -6,7 +6,7 @@ import shareIcon from '../assets/whatsapp.png';
 const pdfLink = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
 
 const Book = (book) => {
-    const { id, title, author, genre, publication_year } = book.book;
+    const { id, title, author} = book.book;
 
     const handleShare = (bookTitle, bookAuthor) => {
         const message = `Check out this book: ${bookTitle} - ${bookAuthor} - ${pdfLink}`;
@@ -15,18 +15,18 @@ const Book = (book) => {
     }
 
     return (
-        <div className='book-card' key={id}>
-            <img src={bookIcon} alt="Book Cover" className="book-image" />
-            <div className="book-details">
-                <h3 className="title">{title}</h3>
-                <p className="author">{author}</p>
-                <div className='genre-year'>
-                    <p className="genre">Genre: <span>{genre}</span></p>
-                    <p className="year">Year: <span>{publication_year}</span></p>
-                </div>
+        <div className='demo' key={id}>
+            <div className='book-card'>
+                <p>{author}</p>
+                <img src={bookIcon} alt="Book Cover" />
+                <h3>{title}</h3>
+            </div>
+            <div className='details'>
+                <h5>{title}</h5>
+                <h6>{author}</h6>
             </div>
             <div className="actions">
-                <button className="share" onClick={() => handleShare(title, author)}><span><img src={shareIcon} alt='share' /></span>Share</button>
+                <img src={shareIcon} alt='whatsapp' onClick={() => handleShare(title, author)} />
             </div>
         </div>
     )
